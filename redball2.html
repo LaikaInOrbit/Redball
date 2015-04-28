@@ -57,6 +57,18 @@
 					moveLeft();
 				}
 			}
+			
+			function moveTriangle(){
+				for (var i = 0; i < 9; i++){
+					moveDownRight();
+				}
+				for (var i = 0; i < 9; i++){
+					moveLeft();
+				}
+				for (var i = 0; i < 9; i++){
+					moveUpRight();
+				}
+			}
 			</script>
 	</head>
 	<body>
@@ -73,6 +85,7 @@
 		<button onclick="moveDownLeft();">Move Down-Left</button>
 		<br />
 		<button onclick="moveSquare();">Move Square</button>
+		<button onclick="moveTriangle();">Move Triangle</button>
 		<br />
 		
 		
