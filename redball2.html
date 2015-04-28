@@ -1,0 +1,98 @@
+<html>
+	<head>
+		<script type='text/javascript' src='http://lrn.icstars.org/redball.js'></script>
+		<script type = 'text/javascript'>
+			function sayhelloworld(){
+				alert ('hello world from in a function');
+
+			}				
+
+			// Straight functions
+			function moveUp(){
+//				document.getElementById('redball').style.position='absolute';
+//				document.getElementbyId('redball').style.top = document.getElementbyId('redball').style.top - 10;
+				redball.top = redball.top - 10;
+			}
+			function moveDown(){
+				redball.top = redball.top + 10;
+			}
+			function moveLeft(){
+				redball.left = redball.left - 10;
+			}
+			function moveRight(){
+				redball.left = redball.left + 10;
+			}
+			
+			// Diagnal functions
+			function moveUpLeft(){
+				moveUp();
+				moveLeft();
+			}
+			function moveDownRight(){
+				moveDown();
+				moveRight();
+			}
+			function moveUpRight(){
+				moveUp();
+				moveRight();
+			}
+			function moveDownLeft(){
+				moveDown();
+				moveLeft();
+			}
+			
+			
+			function moveSquare(){
+				for (var i = 0; i < 4; i++){
+					moveUp();
+					moveUp();
+					moveUp();
+					moveUp();
+				}
+				for (var i = 0; i < 4; i++){
+					moveRight();
+					moveRight();
+					moveRight();
+					moveRight();
+				}
+				for (var i = 0; i < 4; i++){
+					moveDown();
+					moveDown();
+					moveDown();
+					moveDown();
+				}
+				for (var i = 0; i < 4; i++){
+					moveLeft();
+					moveLeft();
+					moveLeft();
+					moveLeft();
+				}
+				for (var i = 0; i < 4; i++){
+					moveUp();
+					moveUp();
+					moveUp();
+					moveUp();
+				}
+			}
+			</script>
+	</head>
+	<body>
+		<button onclick="sayhelloworld();">hello world</button>
+		<br />
+		<button onclick="moveUp();">Move Up</button>
+		<button onclick="moveDown();">Move Down</button>
+		<button onclick="moveLeft();">Move Left</button>
+		<button onclick="moveRight();">Move Right</button>
+		<br />
+		<button onclick="moveUpLeft();">Move Up-Left</button>
+		<button onclick="moveDownRight();">Move Down-Right</button>
+		<button onclick="moveUpRight();">Move Up-Right</button>
+		<button onclick="moveDownLeft();">Move Down-Left</button>
+		<br />
+		<button onclick="moveSquare();">Move Square</button>
+		<br />
+		
+		
+		<img id="redball" src="http://www.icstars.org/files/redball.jpg" />
+	</body>
+</html>
