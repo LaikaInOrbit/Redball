@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<style type="text/css">
+			.directButton {
+				background-image: url("http://www.clker.com/cliparts/M/a/W/k/I/y/yellow-rectangle-button-hi.png");
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+				border: none;
+			}
+			
+			#redball {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+			}
+		</style>
+		
 		<script type='text/javascript' src='http://lrn.icstars.org/redball.js'></script>
 		<script type = 'text/javascript'>
 			function sayhelloworld(){
@@ -24,7 +39,7 @@
 				redball.left = redball.left + 10;
 			}
 			
-			// Diagnal functions
+			// Diagonal functions
 			function moveUpLeft(){
 				moveUp();
 				moveLeft();
@@ -69,24 +84,52 @@
 					moveUpRight();
 				}
 			}
+			
+			function moveOctagon(){
+				for (var i = 0; i < 16; i++){
+					moveRight();
+				}
+				for (var i = 0; i < 8; i++){
+					moveDownRight();
+				}
+				for (var i = 0; i < 16; i++){
+					moveDown();
+				}
+				for (var i = 0; i < 8; i++){
+					moveDownLeft();
+				}
+				for (var i = 0; i < 16; i++){
+					moveLeft();
+				}
+				for (var i = 0; i < 8; i++){
+					moveUpLeft();
+				}
+				for (var i = 0; i < 16; i++){
+					moveUp();
+				}
+				for (var i = 0; i < 8; i++){
+					moveUpRight();
+				}
+			}
 			</script>
 	</head>
 	<body>
-		<button onclick="sayhelloworld();">hello world</button>
-		<br />
-		<button onclick="moveUp();">Move Up</button>
-		<button onclick="moveDown();">Move Down</button>
-		<button onclick="moveLeft();">Move Left</button>
-		<button onclick="moveRight();">Move Right</button>
-		<br />
-		<button onclick="moveUpLeft();">Move Up-Left</button>
-		<button onclick="moveDownRight();">Move Down-Right</button>
-		<button onclick="moveUpRight();">Move Up-Right</button>
-		<button onclick="moveDownLeft();">Move Down-Left</button>
-		<br />
-		<button onclick="moveSquare();">Move Square</button>
-		<button onclick="moveTriangle();">Move Triangle</button>
-		<br />
+		<button class="directButton" onclick="sayhelloworld();">hello world</button>
+		<br /> <br />
+		<button class="directButton" onclick="moveUp();">Move Up</button>
+		<button class="directButton" onclick="moveDown();">Move Down</button>
+		<button class="directButton" onclick="moveLeft();">Move Left</button>
+		<button class="directButton" onclick="moveRight();">Move Right</button>
+		<br /> <br />
+		<button class="directButton" onclick="moveUpLeft();">Move Up-Left</button>
+		<button class="directButton" onclick="moveDownRight();">Move Down-Right</button>
+		<button class="directButton" onclick="moveUpRight();">Move Up-Right</button>
+		<button class="directButton" onclick="moveDownLeft();">Move Down-Left</button>
+		<br /> <br />
+		<button class="directButton" onclick="moveSquare();">Move Square</button>
+		<button class="directButton" onclick="moveTriangle();">Move Triangle</button>
+		<button class="directButton" onclick="moveOctagon();">Move Octagon</button>
+		<br /> <br />
 		
 		
 		<img id="redball" src="http://www.icstars.org/files/redball.jpg" />
